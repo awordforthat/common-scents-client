@@ -6,3 +6,16 @@ This project is designed to fix a common problem with esoteric hobbies: product 
 
 To start, this is built with the indie perfume community in mind, but the intent is to make it as content-agnostic as possible so that any community can use it.
 
+## Local development
+This project is built with NextJS, bootstrapped with `create-next-app`. To get started with local development:
+1. Clone or fork this repo
+2. From the root directory, run either `npm install` or `yarn` to install all dependencies.
+3. In a browser, go to `localhost:3000` to view the site.
+
+That's it for now! More as development proceeds.
+
+## Repo access
+The main branch is protected and will not accept direct pushes. To submit changes, please create your own branch and submit pull rquests to have your code integrated.
+
+## Collaboration
+This is a large project with many moving pieces and I'd welcome any help you're willing to give! Contact me on Reddit (`u/awordforthat`) if you're interested - there are tasks that need doing all through the development pipeline, not just on the front end. 
