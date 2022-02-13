@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
       });
   }, []);
   return (
