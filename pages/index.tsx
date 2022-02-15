@@ -19,6 +19,7 @@ const Home: NextPage = () => {
       .catch((err) => {
         console.error(err);
       });
+    console.log("Loading");
   }, []);
   return (
     <div className={styles.container}>
