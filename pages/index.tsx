@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [scents, setScents] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch(new URL(`${serverUrl}/scents`).toString())
+    fetch(new URL(`${serverUrl}/scents`).toString(), { headers: { "Access-Control-Allow-Origin": "*" } })
       .then(async (res) => {
         const result = await res.json();
         setScents(result);
