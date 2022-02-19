@@ -6,8 +6,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
@@ -16,54 +15,44 @@ import bigLogo from "../public/biglogo.svg";
 
 import styles from "./navbar.module.scss";
 
-const SideNavItems = () => {
-  return (
-    <>
-      <ListItem button>
-        <ListItemText primary="Home" />
-      </ListItem>
-
-      <ListItem button>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </ListItem>
-
-      <ListItem button>
-        <ListItemText primary="Contribute a Scent" />
-      </ListItem>
-
-      <ListItem button>
-        <Link href="/batchContribute">
-          <a>Batch Contribute</a>
-        </Link>
-      </ListItem>
-
-      <ListItem button>
-        <ListItemText primary="All Houses" />
-      </ListItem>
-
-      <ListItem button>
-        <ListItemText primary="Contact" />
-      </ListItem>
-    </>
-  );
-};
-
+//***** Sidebar (Mobile Only) *****/
 const SideNavPanel = (props: { isDrawerOpen: boolean; onClose: () => void }) => {
   return (
     <Drawer open={props.isDrawerOpen} anchor="right" onClose={props.onClose}>
       <List>
-        <SideNavItems />
+        <NavItems />
       </List>
     </Drawer>
   );
 };
 
+//***** Navbar Links  *****/
+const NavItem = (props: { href: string; linkText: string; sx?: Object }) => (
+  <ListItemButton sx={props.sx}>
+    <Link href={props.href}>
+      <a>{props.linkText}</a>
+    </Link>
+  </ListItemButton>
+);
+
+const NavItems = (props: { sx?: Object }) => {
+  return (
+    <>
+      <NavItem href="/search" linkText="Home" sx={props.sx} />
+      <NavItem href="/about" linkText="About" sx={props.sx} />
+      <NavItem href="/houses" linkText="All Houses" sx={props.sx} />
+      <NavItem href="/contribute/single" linkText="Contribute a Scent" sx={props.sx} />
+      <NavItem href="/contribute/batch" linkText="Batch Contribute" sx={props.sx} />
+      <NavItem href="/contact" linkText="Contact" sx={props.sx} />
+    </>
+  );
+};
+
+//***** Navbars  *****/
 export const NavbarMobileSmall = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
-    <AppBar variant="outlined" position="static">
+    <AppBar position="static">
       <Toolbar sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <Image src={smallLogo} width={50} height={50} alt="" />
         <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setIsDrawerOpen(true)}>
@@ -78,7 +67,7 @@ export const NavbarMobileSmall = () => {
 export const NavbarMobileLarge = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
-    <AppBar variant="outlined" position="static" className={styles.appBarMobile}>
+    <AppBar position="static" className={styles.appBarMobile}>
       <Toolbar sx={{ display: "block", height: "200px" }}>
         <div className={styles.logoContainerMobile}>
           <Image src={bigLogo} alt="" height="93px" width="300px" layout="intrinsic" />
@@ -100,11 +89,14 @@ export const NavbarMobileLarge = () => {
 
 export const NavbarDesktop = () => {
   return (
-    <AppBar variant="outlined" position="static" className={styles.appBarDesktop}>
-      <Toolbar sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+    <AppBar position="static" className={styles.appBarDesktop}>
+      <Toolbar className={styles.toolBarDesktop}>
         <div className={styles.logoContainerDesktop}>
-          <Image src={bigLogo} layout="intrinsic" height="67px" alt="" />
+          <Image src={bigLogo} layout="fixed" height="67px" alt="" />
         </div>
+        <List sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between", paddingBottom: "0px" }}>
+          <NavItems sx={{ color: "white", fontSize: "1.2rem", textAlign: "center", fontWeight: "600" }} />
+        </List>
       </Toolbar>
     </AppBar>
   );

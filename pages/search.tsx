@@ -8,6 +8,7 @@ const Search: NextPage = () => {
       <p className="bodyText">
         Welcome to Common Scents, the browsable indie perfume database! [Copy here about what this is and what it does]
       </p>
+      <input type="text" />
     </Layout>
   );
 };

@@ -72,13 +72,15 @@ const debounce = (fn: Function, ms = 100) => {
   };
 };
 
+//make sure to change $layout_breakpoint in global.scss if you change this or stuff will break!!
+const LayoutBreakpoint = 800;
 //returns correct layout initially and (after a debounce) on every resize event
 function ResponsiveResize() {
   const [mobile, setMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const updateMobile = () => {
-      setMobile(window.innerWidth < 576 ? true : false);
+      setMobile(window.innerWidth < LayoutBreakpoint ? true : false);
     };
 
     updateMobile(); //not debounced -- initial calc

@@ -1,3 +1,6 @@
+//make sure to change LayoutBreakpoint in layout.tsx if you change this or stuff will break!!
+$layout_breakpoint: 800px;
+
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
@@ -5,8 +8,15 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  height: 100vh;
+  width: 100vw;
 }
 
+@media screen and (min-width: #{$layout_breakpoint}) {
+  body {
+    background-color: #F5F5F5;
+  }
+}
 a {
   color: inherit;
   text-decoration: none;

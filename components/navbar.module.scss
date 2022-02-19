@@ -11,6 +11,15 @@ $logo_height_desktop: 67px;
   height: #{$mobile_navbar_height};
 }
 
+.toolBarDesktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end !important; //overriding MUI basic styling for desktop only
+  padding-right: 0px !important; //overriding MUI basic styling for desktop only
+  height: #{$desktop_navbar_height};
+}
+
 .logoContainerMobile {
   width: fit-content;
   position: relative;
@@ -22,5 +31,5 @@ $logo_height_desktop: 67px;
   width: fit-content;
   position: relative;
   margin: auto 0rem;
-  top: calc((#{$desktop_navbar_height} - #{$logo_height_desktop}) / 2);
+  align-self: center;
 }
