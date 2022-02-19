@@ -1,4 +1,11 @@
-.container {
-  height: 100vh;
-  width: 100vw;
+.mobilePageContainer {
+  width: 85vw;
+  margin: 2rem auto;
+  min-height: 100vh;
+}
+
+.desktopPageContainer {
+  width: 75vw;
+  margin: 2rem auto;
+  min-height: 100vh;
 }
