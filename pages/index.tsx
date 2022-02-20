@@ -1,16 +1,18 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useEffect, useState } from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
-import styles from "../styles/Home.module.scss";
+import styles from '../styles/Home.module.scss';
 
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL ?? "noServerUrlProvided";
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL ?? 'noServerUrlProvided';
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [scents, setScents] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch(new URL(`${serverUrl}/scents`).toString(), { headers: { "Access-Control-Allow-Origin": "*" } })
+    fetch(new URL(`${serverUrl}/scents`).toString(), {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    })
       .then(async (res) => {
         const result = await res.json();
         setScents(result);
@@ -19,8 +21,8 @@ const Home: NextPage = () => {
       .catch((err) => {
         console.error(err);
       });
-    console.log("Loading");
   }, []);
+
   return (
     <div className={styles.container}>
       <Head>
