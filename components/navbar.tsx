@@ -55,7 +55,7 @@ export const NavbarMobileSmall = () => {
     <AppBar position="static">
       <Toolbar sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <Image src={smallLogo} width={50} height={50} alt="" />
-        <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setIsDrawerOpen(true)}>
+        <IconButton edge="start" color="inherit" aria-label="navigation menu" onClick={() => setIsDrawerOpen(true)}>
           <MenuIcon />
         </IconButton>
         <SideNavPanel isDrawerOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
@@ -76,7 +76,7 @@ export const NavbarMobileLarge = () => {
           edge="start"
           sx={{ position: "absolute", top: "5px", right: "5px" }}
           color="inherit"
-          aria-label="menu"
+          aria-label="navigation menu"
           onClick={() => setIsDrawerOpen(true)}
         >
           <MenuIcon />

@@ -27,7 +27,7 @@ const HeadComponent = () => (
     <link rel="icon" href="/icon.ico" />
     <meta name="description" content="Scent Reccomendation & Review App for Indie Perfumes" />
     <meta name="og:title" content="Common Scents" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Common Scents</title>
   </Head>
 );
@@ -82,7 +82,11 @@ function ResponsiveResize() {
   useEffect(() => {
     let isMounted: boolean = true;
     const updateMobile = () => {
-      if (isMounted) setMobile(window.innerWidth < resizeBreakpoint ? true : false);
+      if (isMounted)
+        setMobile(
+          //window.visualViewport is so resizing works correctly in Chrome Devtools
+          window.innerWidth < resizeBreakpoint || window.visualViewport.width < resizeBreakpoint ? true : false
+        );
     };
 
     updateMobile(); //not debounced -- initial calc
@@ -92,7 +96,6 @@ function ResponsiveResize() {
       isMounted = false;
     };
   }, []);
-
   return typeof mobile !== "undefined" ? (mobile ? MobileLayout : DesktopLayout) : null;
 }
 
