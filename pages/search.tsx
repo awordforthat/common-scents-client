@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 import { Drawer, Button } from "@mui/material";
 
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 
 import styles from "../styles/Search.module.scss";
 
@@ -64,7 +64,7 @@ const FilterItems = (props: { sx?: Object }) => {
 const Search: NextPage = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   return (
-    <Layout navbarStyle="mobileLarge">
+    <Layout>
       <div className={styles.homepageContainer}>
         <p className="bodyText">
           Welcome to Common Scents, the browsable indie perfume database! [Copy here about what this is and what it

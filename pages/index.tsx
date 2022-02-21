@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 
 import styles from "../styles/Home.module.scss";
 

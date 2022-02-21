@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 
 const About: NextPage = () => {
   return (
-    <Layout navbarStyle="mobileSmall">
+    <Layout>
       <h1 className="title">About</h1>
       <p className="bodyText">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid minus eaque commodi doloremque numquam

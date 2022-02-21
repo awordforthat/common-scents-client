@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 
 import Button from "@mui/material/Button";
 
-import Layout from "../../components/layout";
+import { Layout } from "../../components/layout";
 
 const Single: NextPage = () => {
   return (
-    <Layout navbarStyle="mobileSmall">
+    <Layout>
       <h1 className="title">Single Scent Contribution</h1>
       <p className="bodyText">Something missing? Submit an addition here!</p>
       <p className="bodyText">

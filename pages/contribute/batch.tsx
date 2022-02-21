@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 
 import Button from "@mui/material/Button";
 
-import Layout from "../../components/layout";
+import { Layout } from "../../components/layout";
 
 const BatchContribute: NextPage = () => {
   return (
-    <Layout navbarStyle="mobileSmall">
+    <Layout>
       <h1 className="title">Batch Contribution</h1>
       <p className="bodyText">Lots to add? Upload your submissions here.</p>
       <p className="bodyText">
