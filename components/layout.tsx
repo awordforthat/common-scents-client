@@ -7,6 +7,7 @@ import { grey, blue } from "@mui/material/colors";
 import { NavbarDesktop, NavbarMobileLarge, NavbarMobileSmall } from "./navbar";
 
 import styles from "./layout.module.scss";
+import { layoutBreakpoint } from "../styles/_globalvariables.module.scss";
 
 //***** Theme  *****/
 const theme = createTheme({
@@ -64,7 +65,8 @@ function DesktopLayout({ children }: { children: React.ReactNode }) {
 
 //debounce on resize so that performance issues aren't caused by
 //ppl going bonkers on resizing their windows
-const debounce = (fn: Function, ms = 100) => {
+const debounceInterval = 10; //in ms - increase me if performance issues occur
+const debounce = (fn: Function, ms = debounceInterval) => {
   let timeoutId: ReturnType<typeof setTimeout>;
   return function (this: any, ...args: any[]) {
     clearTimeout(timeoutId);
@@ -72,21 +74,22 @@ const debounce = (fn: Function, ms = 100) => {
   };
 };
 
-//make sure to change $layout_breakpoint in global.scss if you change this or stuff will break!!
-const LayoutBreakpoint = 800;
 //returns correct layout initially and (after a debounce) on every resize event
+const resizeBreakpoint = parseInt(layoutBreakpoint.replace("px", "")); //imported from scss
 function ResponsiveResize() {
   const [mobile, setMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
+    let isMounted: boolean = true;
     const updateMobile = () => {
-      setMobile(window.innerWidth < LayoutBreakpoint ? true : false);
+      if (isMounted) setMobile(window.innerWidth < resizeBreakpoint ? true : false);
     };
 
     updateMobile(); //not debounced -- initial calc
     window.addEventListener("resize", debounce(updateMobile)); //debounced!
     return () => {
       window.removeEventListener("resize", debounce(updateMobile)); //debounced!
+      isMounted = false;
     };
   }, []);
 
