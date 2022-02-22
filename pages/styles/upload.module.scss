@@ -1,0 +1,30 @@
+.file {
+  background: #d4e7fd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+}
+
+.buttonBank {
+  justify-content: space-evenly;
+}
+
+.results {
+  margin-top: 50px;
+  div {
+    margin-left: 15px;
+  }
+}
+
+.pending {
+  flex-direction: column;
+  div {
+    margin: 20px;
+  }
+}
+
+.resultsSection {
+  margin-bottom: 20px;
+}
