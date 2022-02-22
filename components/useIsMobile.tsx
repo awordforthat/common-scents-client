@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { layoutBreakpoint } from "../styles/_sharedvariables.module.scss";
+import { layoutBreakpoint } from '../styles/_sharedvariables.module.scss';
 
 //debounce on resize so that performance issues aren't caused by
 //ppl going bonkers on resizing their windows
@@ -13,7 +13,7 @@ const debounce = (fn: Function, ms = debounceInterval) => {
   };
 };
 
-const resizeBreakpoint = parseInt(layoutBreakpoint.replace("px", "")); //imported from scss
+const resizeBreakpoint = parseInt(layoutBreakpoint.replace('px', '')); //imported from scss
 
 //returns true if viewport is less than the breakpoint
 // and false if not (after a debounce) on every resize event
@@ -29,9 +29,9 @@ export default function useIsMobile() {
     };
 
     updateMobile(); //not debounced -- initial calc
-    window.addEventListener("resize", debounce(updateMobile));
+    window.addEventListener('resize', debounce(updateMobile));
     return () => {
-      window.removeEventListener("resize", debounce(updateMobile));
+      window.removeEventListener('resize', debounce(updateMobile));
     };
   }, []);
   return mobile;

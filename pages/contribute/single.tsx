@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import Button from "@mui/material/Button";
+import Button from '@mui/material/Button';
 
-import { Layout } from "../../components/layout";
+import { Layout } from '../../components/layout';
 
 const Single: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Single: NextPage = () => {
         (Adding a bunch of stuff? See the batch submission page <a href="/contribute/batch">here</a>.)
       </p>
       <form action="none" className="mobileForm">
-        <Button variant="contained" type="submit" color="primary" sx={{ width: "fit-content" }}>
+        <Button variant="contained" type="submit" color="primary" sx={{ width: 'fit-content' }}>
           Submit
         </Button>
       </form>

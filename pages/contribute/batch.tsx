@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import Button from "@mui/material/Button";
+import Button from '@mui/material/Button';
 
-import { Layout } from "../../components/layout";
+import { Layout } from '../../components/layout';
 
 const BatchContribute: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const BatchContribute: NextPage = () => {
       <form action="none" className="mobileForm">
         <label htmlFor="file-input">Choose a CSV file to upload: </label>
         <input id="file-input" name="file-input" type="file" accept=".csv" />
-        <Button variant="contained" type="submit" color="primary" sx={{ width: "fit-content" }}>
+        <Button variant="contained" type="submit" color="primary" sx={{ width: 'fit-content' }}>
           Submit
         </Button>
       </form>

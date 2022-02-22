@@ -1,12 +1,12 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { grey, blue } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { grey, blue } from '@mui/material/colors';
 
-import { NavbarDesktop, NavbarMobileSmall } from "./navbar";
-import useIsMobile from "./useIsMobile";
-import styles from "./layout.module.scss";
+import { NavbarDesktop, NavbarMobileSmall } from './navbar';
+import useIsMobile from './useIsMobile';
+import styles from './layout.module.scss';
 
 //***** Theme  *****/
 export const theme = createTheme({

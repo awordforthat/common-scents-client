@@ -1,14 +1,14 @@
 @use '../styles/sharedvariables.module' as global;
 
 .mobilePageContainer {
-  width: 85%;
   margin: 2rem auto;
   min-height: 100%;
+  width: 85%;
 }
 
 .desktopPageContainer {
-  width: 75%;
+  background-color: global.$desktop_background_color;
   margin: 2rem auto;
   min-height: 100%;
-  background-color: global.$desktop_background_color;
+  width: 75%;
 }

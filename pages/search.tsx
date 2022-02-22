@@ -1,14 +1,14 @@
-import { useState } from "react";
-import type { NextPage } from "next";
+import { useState } from 'react';
+import type { NextPage } from 'next';
 
-import { Drawer, Button } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
+import { Drawer, Button } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 
-import { Layout, HeadComponent, theme } from "../components/layout";
-import useIsMobile from "../components/useIsMobile";
-import { NavbarDesktop } from "../components/navbar";
+import { Layout, HeadComponent, theme } from '../components/layout';
+import useIsMobile from '../components/useIsMobile';
+import { NavbarDesktop } from '../components/navbar';
 
-import styles from "../styles/Search.module.scss";
+import styles from '../styles/Search.module.scss';
 
 //***** Filter Button *****/
 const FilterButton = (props: { isFilterOpen: boolean; changeFilterVis: Function }) => {
@@ -41,7 +41,7 @@ const FilterPanelMobile = (props: { isFilterOpen: boolean; onClose: () => void; 
         open={props.isFilterOpen}
         anchor="left"
         onClose={props.onClose}
-        sx={{ width: "280px" }}
+        sx={{ width: '280px' }}
         disableEnforceFocus //so the FilterButton can still be focusable
       >
         <FilterItems />
