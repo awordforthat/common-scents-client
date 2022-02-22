@@ -1,12 +1,6 @@
 import type { NextPage } from 'next';
 import React, { useState } from 'react';
-import {
-  Button,
-  CircularProgress,
-  Alert,
-  AlertTitle,
-  Divider,
-} from '@mui/material';
+import { Button, CircularProgress, Alert, AlertTitle, Divider } from '@mui/material';
 
 import styles from '../styles/page.module.scss';
 import uploadStyles from './styles/upload.module.scss';
@@ -77,9 +71,7 @@ const StashUpload: NextPage = () => {
       <div className={`${styles.container}`}>
         <h2 className={`${styles.pageTitle}`}>Batch Upload</h2>
 
-        <div className={`${styles.subtitle} `}>
-          Export your stash in CSV format and upload it here!
-        </div>
+        <div className={`${styles.subtitle} `}>Export your stash in CSV format and upload it here!</div>
         {filename && (
           <div className={`${uploadStyles.file}`}>
             <span>{filename}</span>
@@ -93,9 +85,7 @@ const StashUpload: NextPage = () => {
             </span>
           </div>
         )}
-        <div
-          className={` ${styles.centerInParent} ${styles.horizontal} ${uploadStyles.buttonBank}`}
-        >
+        <div className={` ${styles.centerInParent} ${styles.horizontal} ${uploadStyles.buttonBank}`}>
           <Button
             variant="outlined"
             component="label"
@@ -110,11 +100,7 @@ const StashUpload: NextPage = () => {
             <input id="upload" type="file" accept=".csv" hidden />
           </Button>
 
-          <Button
-            variant="contained"
-            disabled={!filename || (submitted && !results)}
-            onClick={submit}
-          >
+          <Button variant="contained" disabled={!filename || (submitted && !results)} onClick={submit}>
             Submit
           </Button>
         </div>
