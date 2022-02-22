@@ -9,7 +9,7 @@ import useIsMobile from "./useIsMobile";
 import styles from "./layout.module.scss";
 
 //***** Theme  *****/
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: grey[400],
@@ -21,7 +21,7 @@ const theme = createTheme({
 });
 
 //***** Global Layout *****/
-const HeadComponent = () => (
+export const HeadComponent = () => (
   <Head>
     <link rel="icon" href="/icon.ico" />
     <meta name="description" content="Scent Reccomendation & Review App for Indie Perfumes" />
@@ -57,19 +57,3 @@ function DesktopLayout({ children }: { children: React.ReactNode }) {
 export function Layout({ children }: { children: React.ReactNode }) {
   return useIsMobile() ? MobileLayout({ children }) : DesktopLayout({ children });
 }
-
-//searchpage
-//desktop
-// (<ThemeProvider theme={theme}>
-// <HeadComponent />
-// <NavbarDesktop />
-// <main className={styles.searchPageContainer}>{children}</main>
-// </ThemeProvider>)
-//mobile
-// (
-//   <ThemeProvider theme={theme}>
-//     <HeadComponent />
-//     <NavbarMobileLarge />
-//     <main className={styles.mobilePageContainer}>{children}</main>
-//   </ThemeProvider>
-// )

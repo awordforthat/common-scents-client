@@ -1,19 +1,57 @@
 @use "../styles/globalvariables.module" as global;
+@use "../components/navbar.module.scss" as navbar;
 
-$panel_width: 280px;
+@use "../components/layout.module.scss";
 
-.homepageContainer {
+$mobile_panel_width: 280px;
+$desktop_panel_width: 400px;
+
+//***** page containers *****//
+.desktopContainer {
+  display: grid;
+  grid-template-columns: $desktop_panel_width 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "filterPanel mainContent";
+  column-gap: 0px;
+  row-gap: 0px;
+  width: 100%;
+  height: calc(100vh - navbar.$desktop_navbar_height);
+  overflow: hidden;
+}
+
+.mainContentContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: global.$layout_breakpoint) {
+  .mainContentContainer {
+    margin: 2rem 0rem;
+    grid-area: mainContent;
+    overflow-y: scroll;
+    width: calc(100vw - $desktop_panel_width);
+  }
+}
+
+//***** filter tab *****//
+.desktopFilterPanel {
+  grid-area: filterPanel;
+  display: flex;
+  flex-direction: column;
+  background-color: global.$color_50;
+  height: calc(100vh - navbar.$desktop_navbar_height);
+  width: $desktop_panel_width;
+  z-index: -1;
+  align-items: center;
 }
 
 .filterContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: $panel_width;
+  width: $mobile_panel_width;
 }
 .filterButton {
   position: absolute;
@@ -42,7 +80,7 @@ $panel_width: 280px;
   width: 70px;
   bottom: 50px;
   border-radius: 5px 5px 0rem 0rem;
-  left: calc($panel_width - 20px);
+  left: calc($mobile_panel_width - 20px);
   transform: rotate(90deg);
   cursor: pointer;
   background-color: global.$color_50;
@@ -57,13 +95,13 @@ $panel_width: 280px;
     left: 0px;
   }
   to {
-    left: calc($panel_width - 20px);
+    left: calc($mobile_panel_width - 20px);
   }
 }
 
 @keyframes buttonOut {
   from {
-    left: calc($panel_width - 20px);
+    left: calc($mobile_panel_width - 20px);
   }
   to {
     left: 0px;

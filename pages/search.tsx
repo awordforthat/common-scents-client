@@ -2,12 +2,15 @@ import { useState } from "react";
 import type { NextPage } from "next";
 
 import { Drawer, Button } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 
-import { Layout } from "../components/layout";
+import { Layout, HeadComponent, theme } from "../components/layout";
+import useIsMobile from "../components/useIsMobile";
+import { NavbarDesktop } from "../components/navbar";
 
 import styles from "../styles/Search.module.scss";
 
-//***** Filter Container & Button *****/
+//***** Filter Button *****/
 const FilterButton = (props: { isFilterOpen: boolean; changeFilterVis: Function }) => {
   return props.isFilterOpen ? (
     <button
@@ -28,7 +31,8 @@ const FilterButton = (props: { isFilterOpen: boolean; changeFilterVis: Function 
   );
 };
 
-const FilterPanel = (props: { isFilterOpen: boolean; onClose: () => void; changeFilterVis: Function }) => {
+//***** Filter Containers *****/
+const FilterPanelMobile = (props: { isFilterOpen: boolean; onClose: () => void; changeFilterVis: Function }) => {
   return (
     <>
       <FilterButton isFilterOpen={props.isFilterOpen} changeFilterVis={props.changeFilterVis} />
@@ -46,6 +50,14 @@ const FilterPanel = (props: { isFilterOpen: boolean; onClose: () => void; change
   );
 };
 
+const FilterPanelDesktop = () => {
+  return (
+    <div className={styles.desktopFilterPanel}>
+      <FilterItems />
+    </div>
+  );
+};
+
 //***** Filter Content  *****//
 const FilterItem = (props: { text: string; sx?: Object }) => <Button sx={props.sx}>{props.text}</Button>;
 
@@ -60,24 +72,39 @@ const FilterItems = (props: { sx?: Object }) => {
   );
 };
 
+//***** Search Field and Results  *****//
+const MainBody = () => {
+  return (
+    <div className={styles.mainContentContainer}>
+      <p className="bodyText">
+        Welcome to Common Scents, the browsable indie perfume database! [Copy here about what this is and what it does]
+      </p>
+      <input type="text" />
+    </div>
+  );
+};
+
 //***** Full Page  *****//
 const Search: NextPage = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  return (
+  return useIsMobile() ? (
     <Layout>
-      <div className={styles.homepageContainer}>
-        <p className="bodyText">
-          Welcome to Common Scents, the browsable indie perfume database! [Copy here about what this is and what it
-          does]
-        </p>
-        <input type="text" />
-      </div>
-      <FilterPanel
+      <MainBody />
+      <FilterPanelMobile
         isFilterOpen={isFilterOpen}
         onClose={() => setIsFilterOpen(false)}
         changeFilterVis={() => setIsFilterOpen(!isFilterOpen)}
       />
     </Layout>
+  ) : (
+    <ThemeProvider theme={theme}>
+      <HeadComponent />
+      <NavbarDesktop />
+      <main className={styles.desktopContainer}>
+        <FilterPanelDesktop />
+        <MainBody />
+      </main>
+    </ThemeProvider>
   );
 };
 
