@@ -1,0 +1,49 @@
+.container {
+  max-width: 600px;
+  width: 90%;
+}
+
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100vw;
+}
+
+.pageTitle {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-bottom: 10px;
+}
+
+.deEmphasize {
+  opacity: 0.6;
+}
+
+.centerInParent {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  &.horizontal {
+    flex-direction: row;
+  }
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.sectionHeader {
+  color: rgb(3, 57, 61);
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 600;
+  margin: 20px 0px 20px 0px;
+  text-transform: uppercase;
+}

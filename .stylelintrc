@@ -9,7 +9,7 @@
     "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
     "scss/at-if-closing-brace-space-after": "always-intermediate",
     "indentation": 2,
-    "string-quotes": "double",
+    "string-quotes": "single",
     "no-duplicate-selectors": true,
     "color-hex-length": "long",
     "declaration-block-trailing-semicolon": "always",
