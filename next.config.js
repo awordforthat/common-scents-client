@@ -7,11 +7,10 @@ module.exports = {
   nextConfig,
 
   async rewrites() {
-    console.log('HELLO');
     return [
       {
         source: '/api/:upload',
-        destination: 'http://localhost:5000/:upload', // Proxy to Backend
+        destination: `${process.env.SERVER_URL}/:upload`, // Proxy to Backend
       },
     ];
   },
