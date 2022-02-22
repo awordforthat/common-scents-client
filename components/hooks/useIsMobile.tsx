@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { layoutBreakpoint } from '../styles/_sharedvariables.module.scss';
+import { layoutBreakpoint } from '../../styles/_sharedvariables.module.scss';
 
 //debounce on resize so that performance issues aren't caused by
 //ppl going bonkers on resizing their windows

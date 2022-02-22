@@ -8,7 +8,7 @@ import Menu from '@mui/icons-material/Menu';
 import smallLogo from '../public/circle-icon.svg';
 import bigLogo from '../public/biglogo.svg';
 
-import styles from './navbar.module.scss';
+import styles from './styles/navbar.module.scss';
 
 //***** Sidebar (Mobile Only) *****/
 const SideNavPanel = (props: { isDrawerOpen: boolean; onClose: () => void }) => {

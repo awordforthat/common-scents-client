@@ -5,8 +5,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { grey, blue } from '@mui/material/colors';
 
 import { NavbarDesktop, NavbarMobileSmall } from './navbar';
-import useIsMobile from './useIsMobile';
-import styles from './layout.module.scss';
+import useIsMobile from './hooks/useIsMobile';
+import styles from './styles/layout.module.scss';
 
 //***** Theme  *****/
 export const theme = createTheme({

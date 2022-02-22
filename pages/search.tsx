@@ -5,10 +5,10 @@ import { Drawer, Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { Layout, HeadComponent, theme } from '../components/layout';
-import useIsMobile from '../components/useIsMobile';
+import useIsMobile from '../components/hooks/useIsMobile';
 import { NavbarDesktop } from '../components/navbar';
 
-import styles from './styles/Search.module.scss';
+import styles from './styles/search.module.scss';
 
 //***** Filter Button *****/
 const FilterButton = (props: { isFilterOpen: boolean; changeFilterVis: Function }) => {

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, CircularProgress, Alert, AlertTitle, Divider } from '@mui/material';
 
 import styles from '../styles/page.module.scss';
-import uploadStyles from './styles/Upload.module.scss';
+import uploadStyles from './styles/upload.module.scss';
 
 interface IBatchUploadResult {
   newHouses: string[];
