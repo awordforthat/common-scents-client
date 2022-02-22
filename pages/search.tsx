@@ -8,7 +8,7 @@ import { Layout, HeadComponent, theme } from '../components/layout';
 import useIsMobile from '../components/useIsMobile';
 import { NavbarDesktop } from '../components/navbar';
 
-import styles from '../styles/Search.module.scss';
+import styles from './styles/Search.module.scss';
 
 //***** Filter Button *****/
 const FilterButton = (props: { isFilterOpen: boolean; changeFilterVis: Function }) => {

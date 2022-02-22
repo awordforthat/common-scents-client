@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { Layout } from '../components/layout';
 
-import styles from '../styles/Home.module.scss';
+import styles from './styles/Home.module.scss';
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL ?? 'noServerUrlProvided';
 const Home: NextPage = () => {
