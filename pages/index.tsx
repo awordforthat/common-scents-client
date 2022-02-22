@@ -11,16 +11,16 @@ const Home: NextPage = () => {
   const [scents, setScents] = useState<any[]>([]);
 
   useEffect(() => {
-    // fetch(new URL(`${serverUrl}/scents`).toString(), { headers: { "Access-Control-Allow-Origin": "*" } })
-    //   .then(async (res) => {
-    //     const result = await res.json();
-    //     setScents(result);
-    //     setLoading(false);
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
-    // console.log("Loading");
+    fetch(new URL(`${serverUrl}/scents`).toString(), { headers: { "Access-Control-Allow-Origin": "*" } })
+      .then(async (res) => {
+        const result = await res.json();
+        setScents(result);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    console.log("Loading");
   }, []);
   return (
     <Layout>

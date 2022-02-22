@@ -2,12 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import IconButton from "@mui/material/IconButton";
+import { AppBar, Toolbar, Drawer, List, ListItemButton, IconButton } from "@mui/material";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import smallLogo from "../public/circle-icon.svg";
