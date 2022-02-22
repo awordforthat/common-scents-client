@@ -46,7 +46,7 @@ const StashUpload: NextPage = () => {
       .then(async (res: Response) => {
         const serverRes = await res.json();
         if (Object.keys(serverRes).includes('error')) {
-          setError(serverRes['error']);
+          setError(serverRes['error'].toString());
           return;
         }
         setResults(serverRes);
