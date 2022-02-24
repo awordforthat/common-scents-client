@@ -1,0 +1,35 @@
+$desktop_navbar_height: 100px;
+$mobile_navbar_height: 200px;
+$logo_height_mobile: 93px;
+$logo_height_desktop: 67px;
+
+.appBarDesktop {
+  height: #{$desktop_navbar_height};
+}
+
+.appBarMobile {
+  height: #{$mobile_navbar_height};
+}
+
+.toolBarDesktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end !important; //overriding MUI basic styling for desktop only
+  padding-right: 0px !important; //overriding MUI basic styling for desktop only
+  height: #{$desktop_navbar_height};
+}
+
+.logoContainerMobile {
+  width: fit-content;
+  position: relative;
+  margin: auto;
+  top: calc((#{$mobile_navbar_height} - #{$logo_height_mobile}) / 2);
+}
+
+.logoContainerDesktop {
+  width: fit-content;
+  position: relative;
+  margin: auto 0rem;
+  align-self: center;
+}

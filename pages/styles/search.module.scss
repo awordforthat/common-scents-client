@@ -1,0 +1,107 @@
+@use "../../styles/sharedvariables.module" as global;
+@use "../../components/styles/navbar.module.scss" as navbar;
+
+$mobile_panel_width: 280px;
+$desktop_panel_width: 400px;
+
+//***** page containers *****//
+.desktopContainer {
+  display: grid;
+  grid-template-columns: $desktop_panel_width 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "filterPanel mainContent";
+  column-gap: 0px;
+  row-gap: 0px;
+  width: 100%;
+  height: calc(100vh - navbar.$desktop_navbar_height);
+  overflow: hidden;
+}
+
+.mainContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: global.$layout_breakpoint) {
+  .mainContentContainer {
+    margin: 2rem 0rem;
+    grid-area: mainContent;
+    overflow-y: scroll;
+    width: calc(100vw - $desktop_panel_width);
+  }
+}
+
+//***** filter tab *****//
+.desktopFilterPanel {
+  grid-area: filterPanel;
+  display: flex;
+  flex-direction: column;
+  background-color: global.$color_50;
+  height: calc(100vh - navbar.$desktop_navbar_height);
+  width: $desktop_panel_width;
+  z-index: -1;
+  align-items: center;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $mobile_panel_width;
+}
+.filterButton {
+  position: absolute;
+  box-sizing: border-box;
+  border: none;
+  background-color: global.$color_400;
+  color: global.$color_50;
+  font-weight: 500;
+  font-size: 1.2rem;
+  height: 30px;
+  width: 70px;
+  bottom: 50px;
+  border-radius: 5px 5px 0rem 0rem;
+  left: -20px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.filterButtonSidePanel {
+  position: absolute;
+  box-sizing: border-box;
+  border: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  height: 30px;
+  width: 70px;
+  bottom: 50px;
+  border-radius: 5px 5px 0rem 0rem;
+  left: calc($mobile_panel_width - 20px);
+  transform: rotate(90deg);
+  cursor: pointer;
+  background-color: global.$color_50;
+  color: global.$color_400;
+  z-index: 1201; //higher than MUI filter at z-index: 1200
+}
+
+// for filterButtonSidePanel, to match
+// the MUI animation
+@keyframes buttonIn {
+  from {
+    left: 0px;
+  }
+  to {
+    left: calc($mobile_panel_width - 20px);
+  }
+}
+
+@keyframes buttonOut {
+  from {
+    left: calc($mobile_panel_width - 20px);
+  }
+  to {
+    left: 0px;
+  }
+}
