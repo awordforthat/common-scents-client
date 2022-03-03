@@ -47,7 +47,8 @@ const StashUpload: NextPage = () => {
       })
       .catch((err) => {
         console.error(err);
-        setError(err);
+        setError(err.toString());
+        setSubmitted(false);
       });
   };
 

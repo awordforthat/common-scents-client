@@ -1,28 +1,10 @@
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
 
 import { Layout } from '../components/layout';
 
 import styles from './styles/home.module.scss';
 
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL ?? 'noServerUrlProvided';
 const Home: NextPage = () => {
-  // useEffect(() => {
-  //   fetch(new URL(`${serverUrl}/scents`).toString(), {
-  //     headers: { 'Access-Control-Allow-Origin': '*' },
-  //   })
-  //     .then(async (res) => {
-  //       const result = await res.json();
-  //       if (Object.keys(result).includes('error')) {
-  //         setError(error);
-  //         return;
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, [error]);
-
   return (
     <Layout>
       <main className={styles.main}>
