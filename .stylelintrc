@@ -31,9 +31,6 @@
       {
         "ignore": ["comments"]
       }
-    ],
-    "prettier/prettier": ["error", {}, {
-      "usePrettierrc": true
-    }]
+    ]
   }
 }
